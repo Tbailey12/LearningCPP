@@ -7,7 +7,7 @@ char operator1;										//global to go between functions
 
 double getDouble()
 {
-	cout << "Enter a double value: " << endl;
+	cout << "Enter a double double value: " << endl;
 	double x;
 	cin >> x;
 	return x;

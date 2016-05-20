@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Constants.h"
 #include "ForwardDec.h"
+#include "math.h"
 
 using namespace std;
 double startHeight() //gets the initial drop height from the user
@@ -69,10 +70,37 @@ bool selection(int selection, double height) //decides what to do based on the i
 	if (selection == 2)
 	{
 		double time;
+			cout << "Please enter the time in seconds: " << endl;
+			cin >> time;
+			while (time < 0)
+			{
+				cout << "Please enter a time greater than 0..." << endl;
+				cin >> time;
+			}
+			cout << "The height at " << time << " seconds = " << calcHeight(height, time) << "m" << endl;
+		wait();
+	}
+	if (selection == 3)
+	{
+		cout << "From a height of " << height << "m, it will take " << calcTime(height) << " seconds to hit the ground." << endl;
+		wait();
+	}
+	if (selection == 4)
+	{	
+		double time;
 		cout << "Please enter the time in seconds: " << endl;
 		cin >> time;
-		cout << "The height at " << time << " seconds = " << calcHeight(height, time) << "m" << endl;
+		while (time < 0)
+		{
+			cout << "Please enter a time greater than 0..." << endl;
+			cin >> time;
+		}
+		cout << "The velocity at " << time << " seconds = " << calcVelocity(height, time) << " m/s" << endl;
 		wait();
+	}
+	if (selection == 5)
+	{
+		initHeight = startHeight();
 	}
 	if (selection == 6)
 	{
@@ -81,11 +109,23 @@ bool selection(int selection, double height) //decides what to do based on the i
 	}
 	return true;
 }
+
+double calcTime(double height) //calculates the time it takes for the height to reach 0.
+{
+	return sqrt(-2 * height / gravity);
+}
+
+double calcVelocity(double height, double time)
+{
+	return -gravity*time;
+}
+
 void wait() 
 {
 	cin.clear(); // reset any error flags
 	cin.ignore(LONG_MAX, '\n'); //ignore anything in the input buffer
-	cout << "Press any key to continue...";
+	cout << "Press enter to continue...";
 	cin.get(); //get one more char from the user.
+	cout << endl;
 }
 #endif

@@ -145,6 +145,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CalculationFunctions.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="ForwardDec.h" />
     <ClInclude Include="Functions.h" />

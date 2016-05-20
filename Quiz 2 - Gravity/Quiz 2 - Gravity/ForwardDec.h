@@ -9,4 +9,5 @@ bool selection(int selection, double height);
 void wait();
 double calcTime(double height);
 double calcVelocity(double height, double time);
+inline void delay(long ms);
 #endif

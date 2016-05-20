@@ -1,9 +1,9 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 #include <iostream>
-#include "Constants.h"
 #include "ForwardDec.h"
-#include "math.h"
+#include "CalculationFunctions.h"
+#include "windows.h"
 
 using namespace std;
 double startHeight() //gets the initial drop height from the user
@@ -21,15 +21,6 @@ double startHeight() //gets the initial drop height from the user
 	return x;
 }
 
-double calcHeight(double height, double time) //calculates the height at a given time.
-{
-	double x = gravity*time*time/2;
-	height = height + x;
-	if (height>=0)
-	return height;
-	else return 0;
-}
-
 void drop(double height) //counts up from a given time, returning the time at 1 second intervals.
 {
 	double h{ 1 };
@@ -37,11 +28,12 @@ void drop(double height) //counts up from a given time, returning the time at 1 
 	{
 		h = calcHeight(height, x);
 		cout << "The height at " << x << " seconds is: " << h << "m" << endl;
+		delay(1000);
 	}
 	return;
 }
 
-int userSelect()
+int userSelect() //promts the user to select what they want to do.
 {
 	int x{ 0 };
 	cout << "Please choose one of the following options:\n"
@@ -60,7 +52,7 @@ int userSelect()
 	return x;
 }
 
-bool selection(int selection, double height) //decides what to do based on the integer in selection
+bool selection(int selection, double height) //decides what to do based on the integer from selection function
 {
 	if (selection == 1)
 	{
@@ -100,7 +92,7 @@ bool selection(int selection, double height) //decides what to do based on the i
 	}
 	if (selection == 5)
 	{
-		initHeight = startHeight();
+		initHeight = startHeight(); //changes the global init height variable
 	}
 	if (selection == 6)
 	{
@@ -110,16 +102,6 @@ bool selection(int selection, double height) //decides what to do based on the i
 	return true;
 }
 
-double calcTime(double height) //calculates the time it takes for the height to reach 0.
-{
-	return sqrt(-2 * height / gravity);
-}
-
-double calcVelocity(double height, double time)
-{
-	return -gravity*time;
-}
-
 void wait() 
 {
 	cin.clear(); // reset any error flags
@@ -127,5 +109,10 @@ void wait()
 	cout << "Press enter to continue...";
 	cin.get(); //get one more char from the user.
 	cout << endl;
+}
+
+inline void delay(long ms)
+{
+	Sleep(ms);
 }
 #endif

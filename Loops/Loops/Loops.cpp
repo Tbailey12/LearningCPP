@@ -16,7 +16,7 @@ int main()
 
 	counter = 0;
 	//Do while loop
-	do
+	do													// It always does this once
 	{
 		++counter;
 		cout << "Do while " << counter << endl;

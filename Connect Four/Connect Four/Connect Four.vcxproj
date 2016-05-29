@@ -150,7 +150,11 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="boardOperations.cpp" />
     <ClCompile Include="Connect Four.cpp" />
+    <ClCompile Include="displayOperations.cpp" />
+    <ClCompile Include="play.cpp" />
+    <ClCompile Include="playerOperations.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

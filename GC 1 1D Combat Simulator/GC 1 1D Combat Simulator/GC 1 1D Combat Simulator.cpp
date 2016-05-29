@@ -38,7 +38,9 @@ void fight(int humans, int skeletons)
 
 	while (skeletons > 0 & humans > 0)
 	{
+
 		double humanHit = rand(0, humanDMG);
+
 		double skeletonHit = skeletonDMG - rand(0, skeletonDMG);
 
 		if (turn == true)										//human attacks

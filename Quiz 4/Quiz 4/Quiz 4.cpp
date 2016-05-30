@@ -66,7 +66,7 @@ int main()
 			"3 = Giant Spider \n"
 			"4 = Slime \n";
 
-	int entry;									//get an input from the user and change it to a an enum Type	
+	int entry;								//get an input from the user and change it to a an enum Type	
 	cin >> entry;
 	cout << printType(static_cast<Type>(entry)) << "\n";
 

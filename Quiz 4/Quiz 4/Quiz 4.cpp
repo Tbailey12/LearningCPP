@@ -41,7 +41,7 @@ string printType(Type type)						//returns the type of monster from enum Type as
 		return "a Slime";
 		break;
 	default:
-		return " ";
+		return "Not a valid type";
 		break;
 	}
 }
@@ -58,6 +58,18 @@ int main()
 
 	printMonster(m1);
 	printMonster(m2);
+
+	cout << "Select a monster type: \n"
+			"0 = Ogre \n"
+			"1 = Dragon \n"
+			"2 = Orc \n"
+			"3 = Giant Spider \n"
+			"4 = Slime \n";
+
+	int entry;									//get an input from the user and change it to a an enum Type	
+	cin >> entry;
+	cout << printType(static_cast<Type>(entry)) << "\n";
+
     return 0;
 }
 

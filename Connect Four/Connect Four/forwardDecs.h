@@ -3,9 +3,13 @@
 #define FORWARDDECS_H
 using namespace std;
 
+//Constants
+const int rows{ 6 };
+const int columns{ 7 };
+
 //Display
 void welcome();
-void displayArray();
+void displayArray(string array[rows][columns]);
 
 //Player
 string getPlayer(int PlayerID);

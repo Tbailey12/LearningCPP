@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include "forwardDecs.h"
-#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -15,10 +15,10 @@ void welcome() {
 			"Happy playing!\n" << endl;
 }
 
-void displayArray() {
-	for (int i = 0; i < 6; ++i) {
-		for (int j = 0; j < 7; ++j) {
-			cout << "| " << myArray[i][j]<<" ";
+void displayArray(string array[rows][columns]) {
+	for (int i = 0; i < rows; ++i) {
+		for (int j = 0; j < columns; ++j) {
+			cout << "| " << array[i][j]<<" ";
 		}
 		cout << "|\n";
 	}

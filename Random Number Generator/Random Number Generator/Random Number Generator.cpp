@@ -4,11 +4,11 @@
 
 std::random_device rd;				//Use a hardware entropy source if available
 std::mt19937 mersenne(rd());		//initialize the mersenne twister alogithm with a random seed
+//use mt19937_64 for 64bit integers.
 
 int main()
 {
 	
-
 	for (int i = 0; i < 20; ++i)
 	{
 		std::cout << mersenne() << "\n";

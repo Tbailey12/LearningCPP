@@ -5,8 +5,7 @@
 using namespace std;
 
 int playGame() {
-	bool play{ true };
-		while (play == true) {									//Loops while the game is being played
+		while (1) {									//Loops while the game is being played
 			
 		}
 		return 1;

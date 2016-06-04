@@ -1,10 +1,8 @@
 #include "stdafx.h"
 #include <iostream>
 #include "forwardDecs.h"
-#include <string>
 
-using namespace std;
-
+//Welcom message, rules etc.
 void welcome() {
 	cout << "Welcome to connect four!\n\n"
 			"Rules: \n"
@@ -15,10 +13,11 @@ void welcome() {
 			"Happy playing!\n" << endl;
 }
 
-void displayArray(string array[rows][columns]) {
+//displays the game array in correct formatting
+void displayArray(string gameArray[][columns]) {
 	for (int i = 0; i < rows; ++i) {
 		for (int j = 0; j < columns; ++j) {
-			cout << "| " << array[i][j]<<" ";
+			cout << "| " << gameArray[i][j]<<" ";
 		}
 		cout << "|\n";
 	}

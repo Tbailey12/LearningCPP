@@ -15,6 +15,7 @@ void welcome() {
 
 //displays the game array in correct formatting
 void displayArray(string gameArray[][columns]) {
+	system("cls");
 	for (int i = 0; i < rows; ++i) {
 		for (int j = 0; j < columns; ++j) {
 			cout << "| " << gameArray[i][j]<<" ";

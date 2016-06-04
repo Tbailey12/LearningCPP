@@ -13,7 +13,11 @@ int playGame(string gameArray[][columns], string player1, string player2) {
 				cout << player1 << ", please enter while column you would like to drop the token into: " << endl;
 				updateArray(gameArray, 1, getPlayerInput(gameArray, 1));	//puts the players token into the column entered by the player
 				simulateArray(gameArray);						//simulates tokens falling the the bottom of each column
-				displayArray(gameArray);						//displays the updated array on the screen
+				if (checkConnect4(gameArray, 1))
+				{
+					cout << "\nCONGRATULATIONS " << player1 << ", you won! \n";
+					return 0;
+				}
 				turn = 2;
 				break;
 			}
@@ -22,7 +26,11 @@ int playGame(string gameArray[][columns], string player1, string player2) {
 				cout << player2 << ", please enter while column you would like to drop the token into: " << endl;
 				updateArray(gameArray, 2, getPlayerInput(gameArray, 2));	//puts the players token into the column entered by the player
 				simulateArray(gameArray);						//simulates tokens falling the the bottom of each column
-				displayArray(gameArray);						//displays the updated array on the screen
+				if (checkConnect4(gameArray, 2))
+				{
+					cout << "\nCONGRATULATIONS " << player2 << ", you won! \n";
+					return 0;
+				}
 				turn = 1;
 				break;
 			}

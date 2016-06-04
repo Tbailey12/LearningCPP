@@ -6,7 +6,7 @@ using namespace std;
 // requests the player to enter a unique name, which is returned by the function
 string getPlayer(int playerID) 
 {
-	cout << "Player " << playerID << " please enter your name: " << endl;
+	cout << "Player " << playerID << " please enter your name: ";
 	string playerName{};
 	getline(cin, playerName);
 	return playerName;

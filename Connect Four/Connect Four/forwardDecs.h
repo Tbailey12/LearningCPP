@@ -22,7 +22,11 @@ bool checkValidInput(string gameArray[][columns], int input);
 
 //Board
 void setArray(string gameArray[][columns]);
+bool checkConnect4(string gameArray[][columns], int playerID);
 bool checkSouth(string gameArray[][columns], string check, int row, int column);
+bool checkEast(string gameArray[][columns], string check, int row, int column);
+bool checkSouthWest(string gameArray[][columns], string check, int row, int column);
+bool checkSouthEast(string gameArray[][columns], string check, int row, int column);
 void simulateArray(string gameArray[][columns]);
 void updateArray(string gameArray[][columns],int playerID, int column);
 
